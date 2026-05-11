@@ -13,27 +13,27 @@ const members = [
 
 export default function FeaturedMembers() {
   return (
-    <section id="members" className="relative w-full overflow-hidden bg-[#eef8f8] py-24">
-      <div className="relative mx-auto max-w-6xl px-6 text-center">
+    <section id="members" className="relative w-full overflow-hidden bg-[#eef8f8] py-14 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-5 text-center sm:px-6">
         <SectionBadge>Members</SectionBadge>
-        <h2 className="mx-auto mt-10 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
+        <h2 className="mx-auto mt-7 max-w-3xl text-3xl font-bold leading-[1.1] tracking-tight text-[#205b86] sm:mt-10 sm:text-4xl md:text-5xl">
           Meet the people{" "}
           <span className="text-[#8fb9c0]">behind the club.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#486f7d] md:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#486f7d] sm:mt-6 sm:text-base md:text-lg">
           Dubai 0% Club brings together people from different industries, countries, and walks of
           life — all looking for better ways to connect.
         </p>
       </div>
 
-      <div className="relative mt-14 w-full overflow-hidden">
-        <div className="flex gap-6 px-6" style={{ marginLeft: "-80px", marginRight: "-80px" }}>
+      <div className="mt-10 overflow-x-auto sm:mt-14">
+        <div className="flex gap-4 px-5 pb-2 sm:gap-6 sm:px-6" style={{ width: "max-content" }}>
           {members.map((m, i) => (
             <div key={i} className="shrink-0">
-              <div className="relative h-[280px] w-[230px] overflow-hidden rounded-2xl bg-[#d9ecee] shadow-sm">
+              <div className="relative h-[220px] w-[175px] overflow-hidden rounded-xl bg-[#d9ecee] shadow-sm sm:h-[280px] sm:w-[230px] sm:rounded-2xl">
                 <img src={m.img} alt={m.name} className="h-full w-full object-cover" loading="lazy" />
               </div>
-              <div className="mt-3 text-left">
+              <div className="mt-2.5 text-left">
                 <p className="text-sm font-semibold text-[#205b86]">{m.name}</p>
                 <p className="text-xs text-[#668b96]">{m.role}</p>
               </div>
@@ -42,10 +42,10 @@ export default function FeaturedMembers() {
         </div>
       </div>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-8 flex justify-center sm:mt-10">
         <a
           href="#members"
-          className="inline-flex items-center gap-2 rounded-full bg-[#d9ecee] px-6 py-3 text-sm font-medium text-[#205b86] transition-colors hover:bg-[#c7e1e4]"
+          className="inline-flex items-center gap-2 rounded-full bg-[#d9ecee] px-5 py-2.5 text-sm font-medium text-[#205b86] transition-colors hover:bg-[#c7e1e4] sm:px-6 sm:py-3"
         >
           Browse Members
         </a>

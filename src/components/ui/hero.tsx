@@ -88,42 +88,42 @@ export default function Hero() {
     <section
       id="home"
       ref={heroRef}
-      className="hero-section relative w-full overflow-hidden bg-[#eef8f8] pb-10 pt-28 sm:pt-32"
+      className="hero-section relative w-full overflow-hidden bg-[#eef8f8] pb-0 pt-24 sm:pt-32"
     >
       <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-6">
         <div className="gsap-reveal flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <span className="hero-plus flex h-10 w-10 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#f7fcfc] sm:h-11 sm:w-11">
-            <Plus className="h-5 w-5 text-[#205b86]" strokeWidth={2.5} />
+          <span className="hero-plus flex h-8 w-8 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#f7fcfc] sm:h-10 sm:w-10">
+            <Plus className="h-3.5 w-3.5 text-[#205b86] sm:h-4 sm:w-4" strokeWidth={2.5} />
           </span>
-          <span className="rounded-full border border-[#b7d6d9] bg-[#f7fcfc] px-4 py-2.5 text-sm font-medium text-[#205b86] sm:px-6 sm:py-3">
+          <span className="rounded-full border border-[#b7d6d9] bg-[#f7fcfc] px-3.5 py-1.5 text-xs font-medium text-[#205b86] sm:px-5 sm:py-2">
             Dubai's First 0% Social Club
           </span>
         </div>
 
-        <div className="relative mx-auto mt-8 max-w-[calc(100vw-2rem)] sm:mt-10 sm:max-w-4xl">
-          <h1 className="gsap-reveal relative text-balance text-[clamp(1.9rem,8vw,2.25rem)] font-bold leading-[1.08] tracking-tight text-[#205b86] sm:text-5xl md:text-6xl">
+        <div className="relative mx-auto mt-5 max-w-[calc(100vw-2rem)] sm:mt-8 sm:max-w-4xl">
+          <h1 className="gsap-reveal relative text-balance text-3xl font-bold leading-[1.1] tracking-tight text-[#205b86] sm:text-4xl md:text-5xl">
             Meet people in Dubai,{" "}
             <span className="text-[#8fb9c0]">without the pressure to drink.</span>
           </h1>
         </div>
 
-        <p className="gsap-reveal mx-auto mt-6 max-w-[calc(100vw-2rem)] text-pretty text-base leading-relaxed text-[#486f7d] sm:max-w-2xl md:text-lg">
+        <p className="gsap-reveal mx-auto mt-4 max-w-[calc(100vw-2.5rem)] text-pretty text-sm leading-relaxed text-[#486f7d] sm:mt-6 sm:max-w-2xl sm:text-base md:text-lg">
           Dubai 0% Club is a friendly social community for people who want to connect, go out, stay
           active, and enjoy the city without alcohol being the main event. Drink anything you like.
           Come as you are.
         </p>
 
-        <div className="gsap-reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="gsap-reveal mt-5 flex flex-wrap items-center justify-center gap-2 sm:mt-7 sm:gap-3">
           <a
             href={JOIN_EMAIL_URL}
-            className="inline-flex items-center gap-2 rounded-full bg-[#205b86] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#17466d] active:translate-y-0 sm:px-6"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#205b86] px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#17466d] active:translate-y-0 sm:px-5 sm:py-2.5"
           >
             Join the Club
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </a>
           <a
             href="#events"
-            className="inline-flex items-center gap-2 rounded-full bg-[#d9ecee] px-5 py-3 text-sm font-medium text-[#205b86] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c7e1e4] active:translate-y-0 sm:px-6"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#d9ecee] px-4 py-2 text-sm font-medium text-[#205b86] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c7e1e4] active:translate-y-0 sm:px-5 sm:py-2.5"
           >
             Browse Events
           </a>
@@ -131,19 +131,19 @@ export default function Hero() {
 
       </div>
 
-      <div className="hero-media-frame relative mt-24 h-[320px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-28 sm:h-[380px]">
-        <div className="brand-marquee absolute left-0 top-5 flex w-max gap-4 px-4 sm:top-6 sm:gap-6 sm:px-6">
+      <div className="hero-media-frame relative mt-8 h-[230px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-20 sm:h-[340px]">
+        <div className="brand-marquee absolute left-0 top-2 flex w-max gap-3 px-3 sm:top-5 sm:gap-5 sm:px-5">
           {[...images, ...images].map((src, i) => (
             <div
               key={i}
-              className="hero-card relative h-[220px] w-[236px] shrink-0 overflow-hidden rounded-[1.35rem] bg-[#d9ecee] shadow-[0_22px_45px_-30px_rgba(32,91,134,0.42)] sm:h-[280px] sm:w-[300px]"
-              data-lift={(i % 4) * 14}
-              style={{ "--lift": `${(i % 4) * 14}px` } as CSSProperties}
+              className="hero-card relative h-[175px] w-[185px] shrink-0 overflow-hidden rounded-[1rem] bg-[#d9ecee] shadow-[0_14px_32px_-18px_rgba(32,91,134,0.42)] sm:h-[260px] sm:w-[280px] sm:rounded-[1.35rem]"
+              data-lift={(i % 4) * 10}
+              style={{ "--lift": `${(i % 4) * 10}px` } as CSSProperties}
             >
               <img
                 src={src}
                 alt=""
-                className="h-full w-full rounded-[1.35rem] object-cover"
+                className="h-full w-full rounded-[inherit] object-cover"
                 loading="lazy"
               />
             </div>

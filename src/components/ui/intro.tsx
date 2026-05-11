@@ -2,14 +2,14 @@ import SectionBadge from "@/components/ui/section-badge";
 
 export default function Intro() {
   return (
-    <section className="relative w-full bg-[#eef8f8] py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+    <section className="relative w-full bg-[#eef8f8] py-14 sm:py-24">
+      <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
         <SectionBadge>The Idea</SectionBadge>
-        <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
+        <h2 className="mt-7 text-3xl font-bold leading-[1.1] tracking-tight text-[#205b86] sm:mt-10 sm:text-4xl md:text-5xl">
           A social club for people who want{" "}
           <span className="text-[#8fb9c0]">something different.</span>
         </h2>
-        <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-[#486f7d] md:text-lg">
+        <div className="mx-auto mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-[#486f7d] sm:text-base md:text-lg">
           <p>
             Going out in Dubai often revolves around drinking. Dubai 0% Club gives you another
             option.

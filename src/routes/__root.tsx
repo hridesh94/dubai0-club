@@ -8,7 +8,6 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
-import SmoothScroll from "@/components/ui/SmoothScroll";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -121,9 +120,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SmoothScroll>
-        <Outlet />
-      </SmoothScroll>
+      <Outlet />
     </QueryClientProvider>
   );
 }

@@ -7,10 +7,8 @@ import Membership from "@/components/ui/membership";
 import FeaturedMembers from "@/components/ui/featured-members";
 import Events from "@/components/ui/events";
 import RecurringActivities from "@/components/ui/recurring-activities";
-import Community from "@/components/ui/community";
 import HowItWorks from "@/components/ui/how-it-works";
 import CTA from "@/components/ui/cta";
-import FAQ from "@/components/ui/faq";
 import Contact from "@/components/ui/contact";
 import Footer from "@/components/ui/footer";
 import WhatsAppFloat from "@/components/ui/whatsapp-float";
@@ -27,10 +25,8 @@ function App() {
       <FeaturedMembers />
       <Events />
       <RecurringActivities />
-      <Community />
       <HowItWorks />
       <CTA />
-      <FAQ />
       <Contact />
       <Footer />
       <WhatsAppFloat />

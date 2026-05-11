@@ -12,13 +12,6 @@ import { fileURLToPath, URL } from "node:url";
 export default defineConfig({
   vite: {
     base: "/dubai0-club/",
-    resolve: {
-      alias: {
-        react: fileURLToPath(new URL("./node_modules/react", import.meta.url)),
-        "react-dom": fileURLToPath(new URL("./node_modules/react-dom", import.meta.url)),
-      },
-      dedupe: ["react", "react-dom"],
-    },
   },
   tanstackStart: {
     server: { entry: "server" },
