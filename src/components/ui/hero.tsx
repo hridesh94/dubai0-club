@@ -4,14 +4,15 @@ import { ArrowRight, Plus } from "lucide-react";
 import { JOIN_EMAIL_URL } from "@/lib/site-links";
 
 const images = [
-  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80",
-  "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=800&q=80",
-  "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=80",
-  "https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?w=800&q=80",
-  "https://images.unsplash.com/photo-1485872299829-c673f5194813?w=800&q=80",
-  "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-  "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778509615/5_lwf69o.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778509615/1_tanack.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778509615/6_gnzkmg.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778509617/4_tqr2ez.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778509616/2_jiszu5.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778509615/3_mhiufy.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778510624/golf_s5lgow.jpg",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778510455/10_es3a7g.png",
+  "https://res.cloudinary.com/dj7hwtgxy/image/upload/v1778510455/11_bblpfa.png",
 ];
 
 export default function Hero() {
@@ -131,7 +132,7 @@ export default function Hero() {
 
       </div>
 
-      <div className="hero-media-frame relative mt-8 h-[230px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-20 sm:h-[340px]">
+      <div className="hero-media-frame relative mt-8 h-[230px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-28 sm:h-[360px]">
         <div className="brand-marquee absolute left-0 top-2 flex w-max gap-3 px-3 sm:top-5 sm:gap-5 sm:px-5">
           {[...images, ...images].map((src, i) => (
             <div
