@@ -30,15 +30,15 @@ const cards = [
 
 export default function WhatWeDo() {
   return (
-    <section className="relative w-full bg-white py-24">
+    <section className="relative w-full bg-[#eef8f8] py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <SectionBadge>What We Do</SectionBadge>
-          <h2 className="mx-auto mt-10 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl">
+          <h2 className="mx-auto mt-10 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
             Social plans that make Dubai{" "}
-            <span className="text-neutral-300">feel smaller.</span>
+            <span className="text-[#8fb9c0]">feel smaller.</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#486f7d] md:text-lg">
             From rooftop meetups to early morning runs, the club gives members simple ways to show
             up, meet people, and become part of a community.
           </p>
@@ -50,9 +50,9 @@ export default function WhatWeDo() {
             return (
               <div
                 key={c.title}
-                className="group overflow-hidden rounded-3xl border border-neutral-200/70 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="group overflow-hidden rounded-3xl border border-[#b7d6d9]/80 bg-[#eef8f8] p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="overflow-hidden rounded-2xl bg-neutral-100">
+                <div className="overflow-hidden rounded-2xl bg-[#d9ecee]">
                   <img
                     src={c.img}
                     alt={c.title}
@@ -61,12 +61,12 @@ export default function WhatWeDo() {
                   />
                 </div>
                 <div className="mt-6 flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white">
-                    <Icon className="h-5 w-5 text-neutral-900" strokeWidth={2} />
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#eef8f8]">
+                    <Icon className="h-5 w-5 text-[#205b86]" strokeWidth={2} />
                   </span>
                   <div>
-                    <h3 className="text-xl font-semibold text-neutral-900">{c.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">{c.copy}</p>
+                    <h3 className="text-xl font-semibold text-[#205b86]">{c.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#486f7d]">{c.copy}</p>
                   </div>
                 </div>
               </div>

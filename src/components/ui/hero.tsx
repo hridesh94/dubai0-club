@@ -1,10 +1,7 @@
-import { Plus, ArrowRight } from "lucide-react";
-
-const stats = [
-  { value: "200+", label: "Members" },
-  { value: "20+", label: "Nationalities" },
-  { value: "Socials, padel, runs & more", label: "" },
-];
+import { useEffect, useRef, type CSSProperties } from "react";
+import { gsap } from "gsap";
+import { ArrowRight, Plus } from "lucide-react";
+import { JOIN_EMAIL_URL } from "@/lib/site-links";
 
 const images = [
   "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
@@ -18,68 +15,137 @@ const images = [
 ];
 
 export default function Hero() {
-  return (
-    <section id="home" className="relative w-full overflow-hidden bg-white pb-10 pt-16">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[35%] h-[1400px] w-[1400px] -translate-x-1/2 rounded-full border border-neutral-200/70"
-      />
+  const heroRef = useRef<HTMLElement>(null);
 
-      <div className="relative mx-auto max-w-6xl px-6 text-center">
-        <div className="flex items-center justify-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white">
-            <Plus className="h-5 w-5 text-neutral-900" strokeWidth={2.5} />
+  useEffect(() => {
+    if (!heroRef.current) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        reduceMotion: "(prefers-reduced-motion: reduce)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { reduceMotion, isDesktop } = context.conditions ?? {};
+        const root = heroRef.current;
+        if (!root) return;
+
+        const q = gsap.utils.selector(root);
+
+        gsap.set(q(".gsap-reveal"), { autoAlpha: 1, clearProps: "visibility" });
+
+        if (reduceMotion) {
+          gsap.set(q(".gsap-reveal"), { y: 0, scale: 1 });
+          gsap.set(q(".brand-marquee"), { xPercent: 0 });
+          return;
+        }
+
+        gsap.defaults({ ease: "power3.out", duration: 0.8 });
+
+        gsap.from(q(".gsap-reveal"), {
+          autoAlpha: 0,
+          y: 18,
+          stagger: 0.08,
+          clearProps: "visibility,opacity,transform",
+        });
+
+        gsap.to(q(".hero-plus svg"), {
+          rotation: 45,
+          scale: 0.92,
+          duration: 0.7,
+          ease: "power2.inOut",
+          repeat: -1,
+          yoyo: true,
+          repeatDelay: 3.1,
+          transformOrigin: "50% 50%",
+        });
+
+        gsap.to(q(".brand-marquee"), {
+          xPercent: -50,
+          duration: isDesktop ? 34 : 42,
+          ease: "none",
+          repeat: -1,
+        });
+
+        gsap.to(q(".hero-card"), {
+          y: (index) => Number.parseFloat(root.querySelectorAll<HTMLElement>(".hero-card")[index]?.dataset.lift ?? "0") - 10,
+          duration: 3.8,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          stagger: { each: 0.18, from: "center" },
+        });
+      },
+      heroRef.current,
+    );
+
+    return () => mm.revert();
+  }, []);
+
+  return (
+    <section
+      id="home"
+      ref={heroRef}
+      className="hero-section relative w-full overflow-hidden bg-[#eef8f8] pb-10 pt-12 sm:pt-14"
+    >
+      <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-6">
+        <div className="gsap-reveal flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <span className="hero-plus flex h-10 w-10 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#f7fcfc] sm:h-11 sm:w-11">
+            <Plus className="h-5 w-5 text-[#205b86]" strokeWidth={2.5} />
           </span>
-          <span className="rounded-full border border-neutral-200 bg-white px-6 py-3 text-sm font-medium text-neutral-900">
+          <span className="rounded-full border border-[#b7d6d9] bg-[#f7fcfc] px-4 py-2.5 text-sm font-medium text-[#205b86] sm:px-6 sm:py-3">
             Dubai's First 0% Social Club
           </span>
         </div>
 
-        <h1 className="mx-auto mt-10 max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-6xl">
-          Meet people in Dubai,{" "}
-          <span className="text-neutral-300">without the pressure to drink.</span>
-        </h1>
+        <div className="relative mx-auto mt-8 max-w-[calc(100vw-2rem)] sm:mt-10 sm:max-w-4xl">
+          <h1 className="gsap-reveal relative text-balance text-[clamp(1.9rem,8vw,2.25rem)] font-bold leading-[1.08] tracking-tight text-[#205b86] sm:text-5xl md:text-6xl">
+            Meet people in Dubai,{" "}
+            <span className="text-[#8fb9c0]">without the pressure to drink.</span>
+          </h1>
+        </div>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg">
+        <p className="gsap-reveal mx-auto mt-6 max-w-[calc(100vw-2rem)] text-pretty text-base leading-relaxed text-[#486f7d] sm:max-w-2xl md:text-lg">
           Dubai 0% Club is a friendly social community for people who want to connect, go out, stay
           active, and enjoy the city without alcohol being the main event. Drink anything you like.
           Come as you are.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="gsap-reveal mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="#join"
-            className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+            href={JOIN_EMAIL_URL}
+            className="inline-flex items-center gap-2 rounded-full bg-[#205b86] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#17466d] active:translate-y-0 sm:px-6"
           >
             Join the Club
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
             href="#events"
-            className="inline-flex items-center gap-2 rounded-full bg-neutral-100 px-6 py-3 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-200"
+            className="inline-flex items-center gap-2 rounded-full bg-[#d9ecee] px-5 py-3 text-sm font-medium text-[#205b86] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c7e1e4] active:translate-y-0 sm:px-6"
           >
             Browse Events
           </a>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-neutral-600">
-          {stats.map((s, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="font-semibold text-neutral-900">{s.value}</span>
-              {s.label && <span>{s.label}</span>}
-            </div>
-          ))}
-        </div>
       </div>
 
-      <div className="relative mt-14 w-full overflow-hidden">
-        <div className="flex gap-6 px-6" style={{ marginLeft: "-80px", marginRight: "-80px" }}>
-          {images.map((src, i) => (
+      <div className="hero-media-frame relative mt-10 h-[288px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-12 sm:h-[352px]">
+        <div className="brand-marquee absolute left-0 top-5 flex w-max gap-4 px-4 sm:top-6 sm:gap-6 sm:px-6">
+          {[...images, ...images].map((src, i) => (
             <div
               key={i}
-              className="relative h-[280px] w-[300px] shrink-0 overflow-hidden rounded-2xl bg-neutral-100 shadow-sm"
+              className="hero-card relative h-[220px] w-[236px] shrink-0 overflow-hidden rounded-[1.35rem] bg-[#d9ecee] shadow-[0_22px_45px_-30px_rgba(32,91,134,0.42)] sm:h-[280px] sm:w-[300px]"
+              data-lift={(i % 4) * 14}
+              style={{ "--lift": `${(i % 4) * 14}px` } as CSSProperties}
             >
-              <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" />
+              <img
+                src={src}
+                alt=""
+                className="h-full w-full rounded-[1.35rem] object-cover"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

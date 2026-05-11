@@ -19,28 +19,28 @@ export default function TourActivities() {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20">
+    <section className="relative w-full overflow-hidden bg-[#eef8f8] py-20">
       {/* Subtle arc background */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[30%] h-[1400px] w-[1400px] -translate-x-1/2 rounded-full border border-neutral-200/70"
+        className="pointer-events-none absolute left-1/2 top-[30%] h-[1400px] w-[1400px] -translate-x-1/2 rounded-full border border-[#b7d6d9]/80"
       />
 
       <div className="relative mx-auto max-w-6xl px-6 text-center">
         {/* Pill badge */}
         <div className="flex items-center justify-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white">
-            <Plus className="h-5 w-5 text-neutral-900" strokeWidth={2.5} />
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#eef8f8]">
+            <Plus className="h-5 w-5 text-[#205b86]" strokeWidth={2.5} />
           </span>
-          <span className="rounded-full border border-neutral-200 bg-white px-6 py-3 text-sm font-medium text-neutral-900">
+          <span className="rounded-full border border-[#b7d6d9] bg-[#eef8f8] px-6 py-3 text-sm font-medium text-[#205b86]">
             Our Tour Activities
           </span>
         </div>
 
         {/* Heading */}
-        <h2 className="mx-auto mt-10 max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-6xl">
+        <h2 className="mx-auto mt-10 max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-6xl">
           Whether you seek adventure, culture, or calm we've got the perfect experience{" "}
-          <span className="text-neutral-300">for every kind of traveler.</span>
+          <span className="text-[#8fb9c0]">for every kind of traveler.</span>
         </h2>
 
         {/* Filters */}
@@ -52,8 +52,8 @@ export default function TourActivities() {
               className={cn(
                 "rounded-full px-6 py-3 text-sm font-medium transition-colors",
                 active === f
-                  ? "bg-neutral-900 text-white"
-                  : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200",
+                  ? "bg-[#205b86] text-white"
+                  : "bg-[#d9ecee] text-[#205b86] hover:bg-[#c7e1e4]",
               )}
             >
               {f}
@@ -68,7 +68,7 @@ export default function TourActivities() {
           {images.map((src, i) => (
             <div
               key={i}
-              className="relative h-[280px] w-[300px] shrink-0 overflow-hidden rounded-2xl bg-neutral-100 shadow-sm"
+              className="relative h-[280px] w-[300px] shrink-0 overflow-hidden rounded-2xl bg-[#d9ecee] shadow-sm"
             >
               <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" />
             </div>

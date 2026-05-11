@@ -1,5 +1,6 @@
 import SectionBadge from "@/components/ui/section-badge";
 import { MapPin, Clock } from "lucide-react";
+import { GOOGLE_MAPS_DUBAI_URL, JOIN_EMAIL_URL } from "@/lib/site-links";
 
 const activities = [
   {
@@ -20,13 +21,13 @@ const activities = [
 
 export default function RecurringActivities() {
   return (
-    <section className="relative w-full bg-white py-24">
+    <section className="relative w-full bg-[#eef8f8] py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <SectionBadge>Weekly Activities</SectionBadge>
-          <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl">
+          <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
             Weekly activities{" "}
-            <span className="text-neutral-300">you can count on.</span>
+            <span className="text-[#8fb9c0]">you can count on.</span>
           </h2>
         </div>
 
@@ -34,16 +35,16 @@ export default function RecurringActivities() {
           {activities.map((a, i) => (
             <div
               key={a.title}
-              className={`grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-neutral-200/70 bg-white shadow-sm md:grid-cols-2 ${
+              className={`grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-[#b7d6d9]/80 bg-[#eef8f8] shadow-sm md:grid-cols-2 ${
                 i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
               }`}
             >
-              <div className="overflow-hidden bg-neutral-100">
+              <div className="overflow-hidden bg-[#d9ecee]">
                 <img src={a.img} alt={a.title} className="h-full min-h-[300px] w-full object-cover" loading="lazy" />
               </div>
               <div className="flex flex-col justify-center p-8">
-                <h3 className="text-2xl font-bold text-neutral-900">{a.title}</h3>
-                <div className="mt-4 space-y-2 text-sm text-neutral-600">
+                <h3 className="text-2xl font-bold text-[#205b86]">{a.title}</h3>
+                <div className="mt-4 space-y-2 text-sm text-[#486f7d]">
                   <p className="inline-flex items-center gap-2">
                     <Clock className="h-4 w-4" /> {a.when}
                   </p>
@@ -51,17 +52,19 @@ export default function RecurringActivities() {
                     <MapPin className="h-4 w-4" /> {a.where}
                   </p>
                 </div>
-                <p className="mt-4 text-base leading-relaxed text-neutral-600">{a.copy}</p>
+                <p className="mt-4 text-base leading-relaxed text-[#486f7d]">{a.copy}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href="#join"
-                    className="inline-flex rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-800"
+                    href={JOIN_EMAIL_URL}
+                    className="inline-flex rounded-full bg-[#205b86] px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#17466d] active:translate-y-0"
                   >
                     Register
                   </a>
                   <a
-                    href="#"
-                    className="inline-flex rounded-full bg-neutral-100 px-5 py-2.5 text-sm font-medium text-neutral-900 hover:bg-neutral-200"
+                    href={`${GOOGLE_MAPS_DUBAI_URL}+${encodeURIComponent(a.where)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex rounded-full bg-[#d9ecee] px-5 py-2.5 text-sm font-medium text-[#205b86] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c7e1e4] active:translate-y-0"
                   >
                     Directions
                   </a>

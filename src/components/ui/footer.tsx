@@ -1,51 +1,65 @@
-const links = ["Home", "Members", "Events", "Insights", "Shop", "Join"];
+import BrandLogo from "@/components/ui/brand-logo";
+import { WHATSAPP_URL } from "@/lib/site-links";
+
+const links = [
+  { label: "Home", href: "#home" },
+  { label: "Members", href: "#members" },
+  { label: "Events", href: "#events" },
+  { label: "Join", href: "#join" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-neutral-200/70 bg-white">
+    <footer className="w-full border-t border-[#b7d6d9]/80 bg-[#eef8f8]">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
-            <p className="text-base font-semibold tracking-tight text-neutral-900">
-              Dubai 0% Club
-            </p>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-600">
+            <a href="#home" className="block w-[138px] transition-opacity hover:opacity-80">
+              <BrandLogo />
+            </a>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#486f7d]">
               Dubai's first 0% social club — a community for meeting people, going out, staying
               active, and enjoying the city without the pressure to drink.
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-neutral-900">Explore</p>
+            <p className="text-sm font-semibold text-[#205b86]">Explore</p>
             <ul className="mt-4 space-y-2">
               {links.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <a
-                    href={`#${l.toLowerCase()}`}
-                    className="text-sm text-neutral-600 hover:text-neutral-900"
+                    href={l.href}
+                    className="text-sm text-[#486f7d] hover:text-[#205b86]"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold text-neutral-900">Contact</p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-600">
+            <p className="text-sm font-semibold text-[#205b86]">Contact</p>
+            <ul className="mt-4 space-y-2 text-sm text-[#486f7d]">
               <li>
-                <a href="mailto:dubaizeroclub@gmail.com" className="hover:text-neutral-900">
+                <a href="mailto:dubaizeroclub@gmail.com" className="hover:text-[#205b86]">
                   dubaizeroclub@gmail.com
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-neutral-900">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#205b86]"
+                >
                   WhatsApp
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-neutral-200/70 pt-6 text-xs text-neutral-500">
+        <div className="mt-12 border-t border-[#b7d6d9]/80 pt-6 text-xs text-[#668b96]">
           © {new Date().getFullYear()} Dubai 0% Club. All rights reserved.
         </div>
       </div>

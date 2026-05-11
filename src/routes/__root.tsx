@@ -72,14 +72,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Dubai 0% Club" },
+      {
+        name: "description",
+        content:
+          "Dubai's first 0% social club for events, padel, runs, and alcohol-free community.",
+      },
+      { name: "author", content: "Dubai 0% Club" },
+      { property: "og:title", content: "Dubai 0% Club" },
+      {
+        property: "og:description",
+        content:
+          "Meet people, stay active, and enjoy Dubai without alcohol being the main event.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

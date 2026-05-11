@@ -13,10 +13,11 @@ import CTA from "@/components/ui/cta";
 import FAQ from "@/components/ui/faq";
 import Contact from "@/components/ui/contact";
 import Footer from "@/components/ui/footer";
+import WhatsAppFloat from "@/components/ui/whatsapp-float";
 
 function App() {
   return (
-    <main className="relative min-h-screen flex flex-col bg-white text-neutral-900">
+    <main className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-[#eef8f8] text-[#205b86]">
       <Navigation />
       <Hero />
       <Intro />
@@ -32,6 +33,7 @@ function App() {
       <FAQ />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 }

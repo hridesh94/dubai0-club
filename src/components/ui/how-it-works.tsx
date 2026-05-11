@@ -20,12 +20,12 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative w-full bg-white py-24">
+    <section className="relative w-full bg-[#eef8f8] py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <SectionBadge>How It Works</SectionBadge>
-          <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl">
-            How it <span className="text-neutral-300">works.</span>
+          <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
+            How it <span className="text-[#8fb9c0]">works.</span>
           </h2>
         </div>
 
@@ -33,13 +33,13 @@ export default function HowItWorks() {
           {steps.map((s) => (
             <div
               key={s.n}
-              className="rounded-3xl border border-neutral-200/70 bg-white p-8 shadow-sm"
+              className="rounded-3xl border border-[#b7d6d9]/80 bg-[#eef8f8] p-8 shadow-sm"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-sm font-semibold text-neutral-900">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#dceff0] text-sm font-semibold text-[#205b86]">
                 {s.n}
               </span>
-              <h3 className="mt-6 text-xl font-semibold text-neutral-900">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600">{s.copy}</p>
+              <h3 className="mt-6 text-xl font-semibold text-[#205b86]">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#486f7d]">{s.copy}</p>
             </div>
           ))}
         </div>

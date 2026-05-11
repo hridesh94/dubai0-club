@@ -33,12 +33,12 @@ const items = [
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="relative w-full bg-neutral-50 py-24">
+    <section id="faq" className="relative w-full bg-[#dceff0] py-24">
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center">
           <SectionBadge>FAQ</SectionBadge>
-          <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl">
-            Questions, <span className="text-neutral-300">answered.</span>
+          <h2 className="mt-10 text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
+            Questions, <span className="text-[#8fb9c0]">answered.</span>
           </h2>
         </div>
 
@@ -48,18 +48,18 @@ export default function FAQ() {
             return (
               <div
                 key={it.q}
-                className="overflow-hidden rounded-2xl border border-neutral-200/70 bg-white shadow-sm"
+                className="overflow-hidden rounded-2xl border border-[#b7d6d9]/80 bg-[#eef8f8] shadow-sm"
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                 >
-                  <span className="text-base font-medium text-neutral-900">{it.q}</span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white">
+                  <span className="text-base font-medium text-[#205b86]">{it.q}</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#b7d6d9] bg-[#eef8f8]">
                     {isOpen ? (
-                      <Minus className="h-4 w-4 text-neutral-900" strokeWidth={2.5} />
+                      <Minus className="h-4 w-4 text-[#205b86]" strokeWidth={2.5} />
                     ) : (
-                      <Plus className="h-4 w-4 text-neutral-900" strokeWidth={2.5} />
+                      <Plus className="h-4 w-4 text-[#205b86]" strokeWidth={2.5} />
                     )}
                   </span>
                 </button>
@@ -70,7 +70,7 @@ export default function FAQ() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-5 text-sm leading-relaxed text-neutral-600">{it.a}</p>
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-[#486f7d]">{it.a}</p>
                   </div>
                 </div>
               </div>

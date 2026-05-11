@@ -2,9 +2,9 @@ import SectionBadge from "@/components/ui/section-badge";
 
 export default function About() {
   return (
-    <section className="relative w-full bg-neutral-50 py-24">
+    <section className="relative w-full bg-[#dceff0] py-24">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-2 md:items-center">
-        <div className="overflow-hidden rounded-3xl bg-neutral-100 shadow-sm">
+        <div className="overflow-hidden rounded-3xl bg-[#d9ecee] shadow-sm">
           <img
             src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1200&q=80"
             alt="Friends socialising"
@@ -16,11 +16,11 @@ export default function About() {
           <div className="flex justify-start">
             <SectionBadge>About the Club</SectionBadge>
           </div>
-          <h2 className="mt-8 text-4xl font-bold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl">
+          <h2 className="mt-8 text-4xl font-bold leading-[1.1] tracking-tight text-[#205b86] md:text-5xl">
             No pressure. No awkwardness.{" "}
-            <span className="text-neutral-300">Just good people.</span>
+            <span className="text-[#8fb9c0]">Just good people.</span>
           </h2>
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-neutral-600 md:text-lg">
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-[#486f7d] md:text-lg">
             <p>
               Dubai 0% Club is for anyone who enjoys socialising but does not want alcohol to define
               the night.
