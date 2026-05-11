@@ -1,9 +1,11 @@
+import TourActivities from "@/components/ui/tour-activities";
+
 function App() {
   return (
     <main className="relative min-h-screen flex flex-col">
-      {/* Components will be stacked here */}
+      <TourActivities />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
