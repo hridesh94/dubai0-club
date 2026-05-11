@@ -16,7 +16,7 @@ const links = [
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#b7d6d9]/80 bg-[#eef8f8]/86 backdrop-blur-xl">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#b7d6d9]/80 bg-[#eef8f8]/86 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:px-6">
         <a href="#home" className="block transition-opacity hover:opacity-80">
           <BrandLogo />

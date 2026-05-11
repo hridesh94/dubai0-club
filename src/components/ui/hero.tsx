@@ -88,7 +88,7 @@ export default function Hero() {
     <section
       id="home"
       ref={heroRef}
-      className="hero-section relative w-full overflow-hidden bg-[#eef8f8] pb-10 pt-12 sm:pt-14"
+      className="hero-section relative w-full overflow-hidden bg-[#eef8f8] pb-10 pt-28 sm:pt-32"
     >
       <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-6">
         <div className="gsap-reveal flex flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -131,7 +131,7 @@ export default function Hero() {
 
       </div>
 
-      <div className="hero-media-frame relative mt-10 h-[288px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-12 sm:h-[352px]">
+      <div className="hero-media-frame relative mt-24 h-[320px] w-full max-w-full overflow-x-clip overflow-y-visible sm:mt-28 sm:h-[380px]">
         <div className="brand-marquee absolute left-0 top-5 flex w-max gap-4 px-4 sm:top-6 sm:gap-6 sm:px-6">
           {[...images, ...images].map((src, i) => (
             <div
